@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue'
 const contador1 = ref(0)
 const contador2 = ref(0)
-const soma= computed(()=> contador1.value + contador2.value)
+const soma = computed(() => contador1.value + contador2.value)
 </script>
 <template>
   <div class="container">
@@ -21,9 +21,11 @@ const soma= computed(()=> contador1.value + contador2.value)
     </div>
     <div>
       <p class="fs-4">a soma é {{ soma }}</p>
-      <p v-if = "soma> 10" class = "fs-4"> a soma é maior do que 10</p>
+      <p v-if="soma > 10" class="fs-4">a soma é maior do que 10</p>
       <p v-else class="fs-4">a soma é menor ou igual a 10</p>
-          </div>
+      <p v-if="soma % 2 === 0" class="fs-4">a soma é par</p>
+      <p v-else class="fs-4"> a soma é impar</p>
+    </div>
   </div>
 </template>
 <style scoped></style>
